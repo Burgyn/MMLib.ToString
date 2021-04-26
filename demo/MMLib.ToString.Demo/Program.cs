@@ -8,7 +8,7 @@ namespace MMLib.ToString.Demo
         static void Main(string[] args)
         {
             var p = new Person() { Id = 1, Name = "Nobody" };
-            Console.WriteLine(p.ToString());
+            Console.WriteLine(p);
         }
     }
 
