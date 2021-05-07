@@ -15,11 +15,11 @@ jobs:
       with:
         dotnet-version: 5.0.101
     - name: Build
-      run: dotnet build .\src\MMLib.ToString.Generator\MMLib.ToString.Generator.csproj --configuration Release
+      run: dotnet build ./src/MMLib.ToString.Generator/MMLib.ToString.Generator.csproj --configuration Release
     - name: Test
       run: dotnet test ./MMLib.ToString.sln --configuration Release
     - name: Generate nuget package
-      run: dotnet pack  .\src\MMLib.ToString.Generator\MMLib.ToString.Generator.csproj --configuration Release -o nupkg
+      run: dotnet pack  ./src/MMLib.ToString.Generator/MMLib.ToString.Generator.csproj --configuration Release -o nupkg
     - name: Publish nuget package
       run: find . -name *.nupkg -type f -print0 | xargs -0 -I pkg dotnet nuget push pkg -k $nuget_api_key -s "https://api.nuget.org/v3/index.json" --skip-duplicate
       env:
