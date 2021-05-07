@@ -4,6 +4,8 @@
 
 [![Publish package](https://github.com/Burgyn/MMLib.ToString/actions/workflows/deploy.yml/badge.svg)](https://github.com/Burgyn/MMLib.ToString/actions/workflows/deploy.yml)
 
+`dotnet add package MMLib.ToString.Generator`
+
 We all love the new `record` type. One of the completely marginal features is that it has an override `ToString()` method.
 
 ```csharp
