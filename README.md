@@ -2,6 +2,8 @@
 
 > This is my first attempt with a [C# Source generators](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/).
 
+[![Publish package](https://github.com/Burgyn/MMLib.ToString/actions/workflows/deploy.yml/badge.svg)](https://github.com/Burgyn/MMLib.ToString/actions/workflows/deploy.yml)
+
 We all love the new `record` type. One of the completely marginal features is that it has an override `ToString()` method.
 
 ```csharp
