@@ -17,7 +17,7 @@ jobs:
     - name: Build
       run: dotnet build ./src/MMLib.ToString.Generator/MMLib.ToString.Generator.csproj --configuration Release
     - name: Test
-      run: dotnet test ./MMLib.ToString.sln --configuration Release
+      run: dotnet test ./tests/MMLib.ToString.Tests/MMLib.ToString.Tests.csproj
     - name: Generate nuget package
       run: dotnet pack  ./src/MMLib.ToString.Generator/MMLib.ToString.Generator.csproj --configuration Release -o nupkg
     - name: Publish nuget package
