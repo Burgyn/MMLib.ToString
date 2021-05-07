@@ -8,7 +8,7 @@ namespace MMLib.ToString.Generator
     public sealed class ToStringReceiver: ISyntaxReceiver
     {
         private static readonly string _attributeShort = nameof(ToStringAttribute).TrimEnd("Attribute");
-        private readonly List<ClassDeclarationSyntax> _candidates = new List<ClassDeclarationSyntax>();
+        private readonly List<ClassDeclarationSyntax> _candidates = new();
 
         public IEnumerable<ClassDeclarationSyntax> Candidates => _candidates;
 

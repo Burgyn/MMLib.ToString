@@ -18,7 +18,7 @@ namespace MMLib.ToString.Generator
             => classDeclaration.Modifiers.ToFullString().Trim();
 
         public static bool HaveAttribute(this ClassDeclarationSyntax classDeclaration, string attributeName)
-            => classDeclaration.AttributeLists.Count > 0
+            => classDeclaration?.AttributeLists.Count > 0
                 && classDeclaration
                     .AttributeLists
                        .SelectMany(SelectWithAttributes(attributeName))
@@ -32,7 +32,7 @@ namespace MMLib.ToString.Generator
                 .ToString();
 
         private static Func<AttributeListSyntax, IEnumerable<AttributeSyntax>> SelectWithAttributes(string attributeName)
-            => l => l.Attributes.Where(a => (a.Name as IdentifierNameSyntax).Identifier.Text == attributeName);
+            => l => l?.Attributes.Where(a => (a.Name as IdentifierNameSyntax)?.Identifier.Text == attributeName);
 
         public static IEnumerable<ITypeSymbol> GetBaseTypesAndThis(this ITypeSymbol type)
         {
