@@ -4,11 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MMLib.ToString.Abstraction\MMLib.ToString.Abstraction.csproj" />
-    <ProjectReference Include="..\..\src\MMLib.ToString.Generator\MMLib.ToString.Generator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <PackageReference Include="MMLib.ToString.Generator" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

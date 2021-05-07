@@ -40,5 +40,17 @@ namespace MMLib.ToString.Demo
         public string Name { get; set; }
 
         public DateTime Created { get; set; }
+
+        public string LastName { get; set; }
+    }
+
+    [ToString()]
+    public partial class FooBar
+    {
+        public int Id { get; set; }
+
+        public string Bar { get; set; }
+
+        public int Deleted { get; set; }
     }
 }

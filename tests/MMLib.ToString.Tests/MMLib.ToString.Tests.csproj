@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\MMLib.ToString.Abstraction\MMLib.ToString.Abstraction.csproj" />
     <ProjectReference Include="..\..\src\MMLib.ToString.Generator\MMLib.ToString.Generator.csproj" />
+    <PackageReference Include="Scriban" Version="3.6.0" />
   </ItemGroup>
 
 </Project>

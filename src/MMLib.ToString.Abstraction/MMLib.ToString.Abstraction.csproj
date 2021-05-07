@@ -2,7 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Milan Martiniak</Authors>
+    <Company>MMLib</Company>
+    <Description>Abstraction for MMLib.ToString.Generator.</Description>
+    <PackageProjectUrl>https://github.com/Burgyn/MMLib.ToString</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Burgyn/MMLib.ToString</RepositoryUrl>
+    <PackageTags>tostring;generator;helper</PackageTags>
+    <PackageReleaseNotes />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>@MMLib</Copyright>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\MMLib.TiString.Abstraction.xml</DocumentationFile>

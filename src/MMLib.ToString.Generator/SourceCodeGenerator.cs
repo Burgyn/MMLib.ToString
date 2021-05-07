@@ -1,6 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using System.Text;
+﻿using Scriban;
 
 namespace MMLib.ToString.Generator
 {
@@ -8,45 +6,11 @@ namespace MMLib.ToString.Generator
     {
         public static string Generate(ClassModel model)
         {
-            var sb = new StringBuilder();
+            var template = Template.Parse(EmbeddedResource.GetContent("PartialClassTemplate.txt"));
 
-            sb.AddNamespace(model.Namespace)
-                .AddClass(model.Modifier, model.Name)
-                .AddToStringOverride()
-                .AddStartStringInterpolation();
+            string output = template.Render(model, member => member.Name);
 
-            AddStringFormat(model, sb);
-
-            sb.AddQuotationMark()
-                .AddSemicolon()
-                .AddCloseCurlyBracket()
-                .AddCloseCurlyBracket();
-
-            return SyntaxFactory.ParseCompilationUnit(sb.ToString())
-                .NormalizeWhitespace()
-                .GetText()
-                .ToString();
-        }
-
-        private static void AddStringFormat(ClassModel model, StringBuilder sb)
-        {
-            int count = model.Properties.Length;
-
-            sb.AppendFormat("{0} ", model.Name);
-            sb.AddOpenCurlyBracket()
-                .AddOpenCurlyBracket();
-
-            for (int i = 0; i < count; i++)
-            {
-                sb.AppendFormat("{0} = {{ {0} }}", model.Properties[i]);
-                if (i < count - 1)
-                {
-                    sb.Append(", ");
-                }
-            }
-
-            sb.AddCloseCurlyBracket()
-                .AddCloseCurlyBracket();
+            return output;
         }
     }
 }

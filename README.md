@@ -1,6 +1,6 @@
 # MMLib.ToString
 
-> This is my first attempt with a [C# Source code generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/).
+> This is my first attempt with a [C# Source generators](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/).
 
 We all love the new `record` type. One of the completely marginal features is that it has an override `ToString()` method.
 
@@ -14,7 +14,7 @@ Console.WriteLine(person); //Output: Person {Id = 2, Name = Milan}
 
 Why don't standard classes have such an output? Why do I have to implement this over and over again in each class? How many times have you override a standard `ToString` for debug purpouse?
 
-I decided to try the source generator to allow it to generate a similar override for all classes marked with my attribute *(I want to use the Source code generator for other purposes, this came to me as a nice example to try 😉)*
+I decided to try the source generator to allow it to generate a similar override for all classes marked with my attribute *(I want to use the Source generators for other purposes, this came to me as a nice example to try 😉)*
 
 ```csharp
 [ToString()]
