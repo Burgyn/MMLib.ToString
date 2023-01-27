@@ -15,7 +15,7 @@
     <PackageReleaseNotes />
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>@MMLib</Copyright>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
