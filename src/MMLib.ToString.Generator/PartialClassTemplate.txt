@@ -23,12 +23,12 @@ namespace {{Namespace}}
         /// Generated ToString override.
         /// </summary>
         public override string ToString()
-            => $"{{ Name }} {%{{{}%}{{~ for prop in Properties ~}} {{prop}} = { {{~ prop -}} }
+            => $"{{ Name }} {%{{{}%}{{~ for prop in Properties ~}} {{prop.Key}} = { {{~ prop.Value -}} }
             {{-
                 if i < count
                     ", "
                 end
-                i = i + 1               
+                i = i + 1
             -}}
             {{- end -}}{%{}}}%}";
     }
