@@ -1,5 +1,6 @@
 ﻿using MMLib.ToString.Abstraction;
 using System;
+using System.Collections.Generic;
 
 namespace MMLib.ToString.Demo
 {
@@ -12,7 +13,7 @@ namespace MMLib.ToString.Demo
         }
     }
 
-    [ToString()]
+    [ToString]
     public partial class Person
     {
         public int Id { get; set; }
@@ -28,9 +29,14 @@ namespace MMLib.ToString.Demo
             Created = DateTime.Now,
             Name = "somebody"
         };
+
+        public List<FooBar> FooBars { get; set; } = new()
+        {
+            new() { Id = 1, Bar = "Bar" }
+        };
     }
 
-    [ToString()]
+    [ToString(DisplayCollections = true)]
     public partial class Foo
     {
         public int Id { get; set; }

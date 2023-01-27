@@ -8,5 +8,6 @@ namespace MMLib.ToString.Abstraction
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
     public class ToStringAttribute : Attribute
     {
+        public bool DisplayCollections { get; set; } = false;
     }
 }
