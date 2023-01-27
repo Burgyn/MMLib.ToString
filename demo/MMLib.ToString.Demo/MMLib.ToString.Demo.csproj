@@ -1,14 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MMLib.ToString.Generator" Version="1.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMLib.ToString.Generator\MMLib.ToString.Generator.csproj" IncludeAssets="Build" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMLib.ToString.Abstraction\MMLib.ToString.Abstraction.csproj"/>
+    </ItemGroup>
 
 </Project>
